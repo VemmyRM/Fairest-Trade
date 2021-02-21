@@ -20,10 +20,11 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static("public"));
 
 //connecting mongoose
-mongoose.connect("mongodb+srv://admin-vembu:<password>@cluster0.zrit8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://admin-vembu:test123@cluster0.zrit8.mongodb.net/todoListDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
