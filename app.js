@@ -9,6 +9,7 @@ const { update } = require("lodash");
 const dist = require("./distributors");
 const prod = require("./products");
 const ducers = require("./producers");
+const { exit } = require("process");
 let updateDistributors = dist.updateDistributors;
 let updateProducts = prod.updateProducts;
 let updateProducers = ducers.updateProducers;
@@ -22,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 //connecting mongoose
-mongoose.connect("mongodb://127.0.0.1/fairtradeDB", {
+mongoose.connect("mongodb+srv://admin-vembu:<password>@cluster0.zrit8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -223,26 +224,53 @@ app.get("/distributors", function (req, res) {
 
 app.get("/producer/:producerID", function (req, res){
   const producerID = req.params.producerID;
-  let itemsList = [];
   Producer.findById(producerID, function(err, producer){
-       for (i = 0; i < producer.Items.length; i ++){
-          Product.findOne({_id: producer.Items[i]}, function(err, item){
+    if (err) {
+      console.log(err);
+    }
+    else {
+      var itemsList = [];
+      
+        Distributor.findOne({_id: producer.Distributors[0]}, function(err, item){
+          if (!err){
             itemsList.push(item);
+            Product.findOne({_id: producer.Items[0]}, function(error, item1){
+              res.render("producer", {
+                id: producerID,
+                producer:producer,
+                distList: itemsList,
+                item1: item1
+              })
             })
-      }
-      // console.log(itemsList);
-      res.render("producer", {
-        id: producerID,
-        producer:producer,
-        itemsList: itemsList
-      })
+            }
+        })
+    }
   })
 });
 
 
-app.get("/distributor/:distributorID", function (req, res){
+app.get("/producer/distributor/:distributorID", function (req, res){
+  console.log("made it!");
   const distributorID = req.params.distributorID;
-  res.render("/distributor");
+  Distributor.findById(distributorID, function(err, distributor){
+    if (err) {
+      console.log(err);
+    }
+    else {
+      var itemsList = [];
+
+        Product.findOne({_id: distributor.Items[0]}, function(err, item){
+          if (!err){
+            itemsList.push(item);
+              res.render("distributor", {
+                id: distributorID,
+                distributor: distributor,
+                distList: itemsList
+              })
+            }
+          })
+      }
+  })
 });
 
 //server listening on port 3000

@@ -1,7 +1,20 @@
 <!-- page header -->
 <%- include("partials/header"); -%>
 <!-- post title and content -->
-  <h1><%=Name%></h1>
-  <p><%=Info%></p>
+<div class="figure p-4" style=" display: block; margin-left:auto !important; margin-right: auto; padding-left: auto;">
+  <img src="<%= distributor.Picture %>" class="figure-img img-fluid rounded" style=" display: block; margin-left:auto !important; margin-right: auto; padding-left: auto; min-height: 700px;" alt="...">
+  <figcaption class="figure-caption" style="display: block; margin-left:auto !important; margin-right: auto; padding-left: auto;"><%=distributor.title %></figcaption>
+</div>
+  <h1><%=distributor.Name%></h1>
+  <h4><%=distributor.Location %></h4>
+  <hr>
+  <p><%=distributor.Info%></p>
+
+  <h3> Our products: </h3>
+  <% for (i=0; i < distList.length; i ++) { %>
+    <button type="button" class="btn btn-success" ref=>
+      <span class="badge badge-light badge-pill"><a style="color: white;" href="./distributor/<%=distList[i]._id%>"><%= distList[i].Name%></a></span>
+    </button>
+    <% }; %>
   <!-- page footer -->
 <%- include("partials/footer"); -%>
