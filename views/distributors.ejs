@@ -1,4 +1,14 @@
 <%- include("partials/header"); -%>
-    <h1>Distributors page!</h1>
-    <p> hello World </p>
+<h1>Retailers</h1>
+
+<% distributors.forEach(function(dist){ %>
+    <div class="card" style="width: 100%;">
+        <img src="<%= dist.Picture %>" class="card-img-top" alt="...">
+        <div id= "<%= dist._id %>"class="card-body">
+          <h5 class="card-title"><%= dist.Name %></h5>
+          <p class="card-text"><%= dist.Info.substring(0,100) + "..." %>></p>
+          <a href="/distributors/<%= dist._id%>" class="btn btn-success">Read More</a>
+        </div>
+      </div>
+<% }); %>
 <%- include("partials/footer"); -%>

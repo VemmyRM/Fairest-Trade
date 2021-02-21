@@ -203,12 +203,20 @@ app.get("/aboutus", function (req, res) {
 
 //setting up the producers page route
 app.get("/producers", function (req, res) {
-  res.render("producers");
+  Producer.find(function(err, producers){
+    res.render("producers", {
+        producers: producers,
+    });
+  })
 });
 
 //setting up the distributors page route
 app.get("/distributors", function (req, res) {
-  res.render("distributors");
+  Distributor.find(function(err, distributors){
+    res.render("distributors", {
+        distributors: distributors,
+    });
+  })
 });
 
 app.get("/producer/:producerID", function (req, res){
