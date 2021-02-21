@@ -13,6 +13,8 @@ const { exit } = require("process");
 let updateDistributors = dist.updateDistributors;
 let updateProducts = prod.updateProducts;
 let updateProducers = ducers.updateProducers;
+const OpenTok = reuqire("opentok");
+const OT = new OpenTok(process.env.API_KEY, process.env.API_SECRET);
 
 
 //setting up express
@@ -20,7 +22,6 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(express.static("public"));
 
 //connecting mongoose
@@ -274,8 +275,103 @@ app.get("/producer/distributor/:distributorID", function (req, res){
   })
 });
 
+
+let sessions = {};
+
+
+app.post("/session/:room", (request, response) => {
+  const roomName = request.params.room;
+  // Check if the session already exists
+  if (sessions[roomName]) {
+    // Generate the token
+    generateToken(roomName, response);
+  } else {
+    // If the session does not exist, create one
+    OT.createSession((error, session) => {
+      if (error) {
+        console.log("Error creating session:", error);
+      } else {
+        // Store the session in the sessions object
+        sessions[roomName] = session.sessionId;
+        // Generate the token
+        generateToken(roomName, response);
+      }
+    });
+  }
+});
+
+function generateToken(roomName, response) {
+  // Configure token options
+  const tokenOptions = {
+    role: "publisher",
+    data: `roomname=${roomName}`
+  };
+  // Generate token with the Video API Client SDK
+  let token = OT.generateToken(
+    sessions[roomName],
+    tokenOptions
+  );
+  // Send the required credentials back to to the client
+  // as a response from the fetch request
+  response.status(200);
+  response.send({
+    sessionId: sessions[roomName],
+    token: token,
+    apiKey: process.env.API_KEY
+  });
+}
+
+
+// //server listening on port 3000
+// app.listen(3000, function () {
+//   console.log("Server started on port 3000");
+// });
+
+
+
+
+//             distList: itemsList
+//               })
+//             }
+//           })
+//       }
+//   })
+// });
+
 //server listening on port 3000
 app.listen(process.env.PORT, function () {
+  console.log("Server started on port 3000");
+});
+
+
+
+
+            distList: itemsList
+              })
+            }
+          })
+      }
+  })
+});
+
+//server listening on port 3000
+app.listen(3000, function () {
+  console.log("Server started on port 3000");
+});
+
+
+
+
+            distList: itemsList
+              })
+            }
+          })
+      }
+  })
+});
+
+//server listening on port 3000
+app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
 
