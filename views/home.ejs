@@ -1,6 +1,56 @@
-<!-- page header -->
-<%- include("partials/header"); -%>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
+  <meta charset="utf-8">
+  <title>Fairest Trade</title>
+  <meta charset="utf-8">
+  <!-- importing google fonts  -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+   <!--Bootstrap CDN  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <!-- importing css stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css">
 
+   <nav class="navbar navbar-expand-lg"> 
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">FAIREST TRADE</a>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class= "nav-item" id="aboutus"  style="font: size 20%;" ><a class= "nav-link" href="/aboutus">About</a></li>
+          <li class= "nav-item" id="distributors"><a class= "nav-link" href="/distributors">Retailers</a></li>
+          <li class= "nav-item" id="producers"><a class= "nav-link" href="/producers">Producers</a></li>
+          <li class= "nav-item" id="verifylogo"  style="font: size 20%;" ><a class= "nav-link" href="/verifylogo">Verify</a></li>
+          <li class= "nav-item" id="search"><form class="form-inline my-2 my-lg-0" style="padding-left: 50px;">
+            <div><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <!-- <button class="btn btn-outline-success btn-sm" type="submit">Search</button> -->
+            </div>
+          </form>
+        </li>
+        </ul>
+    </div>
+  </nav>
+  <body>
+  <div class="container1">
+    <img src="https://www.teaandcoffee.net/wp-content/uploads/coffee-beans_64721-3.jpg" alt="Snow" style="width:100%; height:100%">
+    <!-- <div class="bottom-left">Bottom Left</div>
+    <div class="top-left">Top Left</div>
+    <div class="top-right">Top Right</div>
+    <div class="bottom-right">Bottom Right</div>
+    <div class="centered">Welcome to the Fairest Trade App where you can find local producers and distributors who trade fairly!</div> -->
+    <main class="px-3 centered" style="background-color:rgb(128, 128, 128,0.3);">
+      <h1>-- Fairest Trade --</h1>
+      <p class="lead"  >Fairest Trade is an app aimed at educating consumers (like yourself) about distributors who trade fairly and find local producers to connect with directly!</p>
+      <p class="lead">
+          <br/>
+        <a href="/aboutus" class="btn btn-lg btn-secondary fw-bold border-white bg-success">Learn more</a>
+      </p>
+    </main>
+  
+  </div>
 <!-- poge footer -->
 <%- include("partials/footer"); -%>

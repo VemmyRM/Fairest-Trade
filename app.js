@@ -61,135 +61,132 @@ const producerSchema = new mongoose.Schema({
 const Producer = mongoose.model("Producer", producerSchema);
 
 
-// app.get("/updateDB", function(req, res){
+app.get("/updateDB", function(req, res){
   
-// let newProducts = [];
+let newProducts = [];
 
-// updateProducts.forEach(function(error, prod){
-//   // console.log(updateProducts[prod]);
-//     newProducts.push(new Product(updateProducts[prod]));
-//     newProducts[prod].save(function(err){
-//       if (err){
-//         console.log(err);
-//       }
-//     })
-// })
+updateProducts.forEach(function(error, prod){
+  // console.log(updateProducts[prod]);
+    newProducts.push(new Product(updateProducts[prod]));
+    newProducts[prod].save(function(err){
+      if (err){
+        console.log(err);
+      }
+    })
+})
 
   
 
-//   updateDistributors[0].Items.push(newProducts[0]);
-//   updateDistributors[1].Items.push(newProducts[1]);
-//   updateDistributors[2].Items.push(newProducts[5]);
-//   updateDistributors[3].Items.push(newProducts[3]);
-//   updateDistributors[4].Items.push(newProducts[2]);
-//   updateDistributors[5].Items.push(newProducts[2]);
-//   updateDistributors[6].Items.push(newProducts[5]);
-//   updateDistributors[7].Items.push(newProducts[4]);
-//   updateDistributors[8].Items.push(newProducts[5]);
-//   updateDistributors[9].Items.push(newProducts[0]);
-//   updateDistributors[10].Items.push(newProducts[4]);
-//   updateDistributors[11].Items.push(newProducts[5]);
-//   updateDistributors[12].Items.push(newProducts[4]);
-//   updateDistributors[13].Items.push(newProducts[3],newProducts[2],newProducts[4]);
-//   updateDistributors[14].Items.push(newProducts[5]);
-//   updateDistributors[15].Items.push(newProducts[5]);
-//   updateDistributors[16].Items.push(newProducts[5]);
-//   updateDistributors[17].Items.push(newProducts[5]);
-//   updateDistributors[18].Items.push(newProducts[5]);
-//   updateDistributors[19].Items.push(newProducts[5]);
-//   updateDistributors[20].Items.push(newProducts[4]);
+  updateDistributors[0].Items.push(newProducts[0]);
+  updateDistributors[1].Items.push(newProducts[1]);
+  updateDistributors[2].Items.push(newProducts[5]);
+  updateDistributors[3].Items.push(newProducts[3]);
+  updateDistributors[4].Items.push(newProducts[2]);
+  updateDistributors[5].Items.push(newProducts[2]);
+  updateDistributors[6].Items.push(newProducts[5]);
+  updateDistributors[7].Items.push(newProducts[4]);
+  updateDistributors[8].Items.push(newProducts[5]);
+  updateDistributors[9].Items.push(newProducts[0]);
+  updateDistributors[10].Items.push(newProducts[4]);
+  updateDistributors[11].Items.push(newProducts[5]);
+  updateDistributors[12].Items.push(newProducts[4]);
+  updateDistributors[13].Items.push(newProducts[3],newProducts[2],newProducts[4]);
+  updateDistributors[14].Items.push(newProducts[5]);
+  updateDistributors[15].Items.push(newProducts[5]);
+  updateDistributors[16].Items.push(newProducts[5]);
+  updateDistributors[17].Items.push(newProducts[5]);
+  updateDistributors[18].Items.push(newProducts[5]);
+  updateDistributors[19].Items.push(newProducts[5]);
+  updateDistributors[20].Items.push(newProducts[4]);
 
-//   // Product.insertMany(updateProducts, function(error, docs) {
-//   //   if (!error) {
-//   //     console.log("Success!")
-//   //   }
+  // Product.insertMany(updateProducts, function(error, docs) {
+  //   if (!error) {
+  //     console.log("Success!")
+  //   }
   
-//   // });
+  // });
 
-//   let newDistributors = [];
+  let newDistributors = [];
 
-//   updateDistributors.forEach(function(error, prod){
-//     // console.log(updateProducts[prod]);
-//       newDistributors.push(new Distributor(updateDistributors[prod]));
-//       newDistributors[prod].save(function(err){
-//         if (err){
-//           console.log(err);
-//         }
-//       })
-//   })
-//   updateProducers[0].Items.push(newProducts[4]);
-//   updateProducers[0].Distributors.push(newDistributors[2],newDistributors[6], newDistributors[9]);
+  updateDistributors.forEach(function(error, prod){
+    // console.log(updateProducts[prod]);
+      newDistributors.push(new Distributor(updateDistributors[prod]));
+      newDistributors[prod].save(function(err){
+        if (err){
+          console.log(err);
+        }
+      })
+  })
+  updateProducers[0].Items.push(newProducts[4]);
+  updateProducers[0].Distributors.push(newDistributors[2],newDistributors[6], newDistributors[9]);
 
-//   updateProducers[1].Items.push(newProducts[5]);
-//   updateProducers[1].Distributors.push(newDistributors[16],newDistributors[19]);
+  updateProducers[1].Items.push(newProducts[5]);
+  updateProducers[1].Distributors.push(newDistributors[16],newDistributors[19]);
 
-//   updateProducers[2].Items.push(newProducts[4]);
-//   updateProducers[2].Distributors.push(newDistributors[7],newDistributors[10]);
+  updateProducers[2].Items.push(newProducts[4]);
+  updateProducers[2].Distributors.push(newDistributors[7],newDistributors[10]);
 
-//   updateProducers[3].Items.push(newProducts[5]);
-//   updateProducers[3].Distributors.push(newDistributors[11],newDistributors[17]);
+  updateProducers[3].Items.push(newProducts[5]);
+  updateProducers[3].Distributors.push(newDistributors[11],newDistributors[17]);
 
-//   updateProducers[4].Items.push(newProducts[4]);
-//   updateProducers[4].Distributors.push(newDistributors[12],newDistributors[13]);
+  updateProducers[4].Items.push(newProducts[4]);
+  updateProducers[4].Distributors.push(newDistributors[12],newDistributors[13]);
 
-//   updateProducers[5].Items.push(newProducts[5]);
-//   updateProducers[5].Distributors.push(newDistributors[8],newDistributors[11]);
+  updateProducers[5].Items.push(newProducts[5]);
+  updateProducers[5].Distributors.push(newDistributors[8],newDistributors[11]);
 
-//   updateProducers[6].Items.push(newProducts[5]);
-//   updateProducers[6].Distributors.push(newDistributors[15],newDistributors[16]);
+  updateProducers[6].Items.push(newProducts[4]);
+  updateProducers[6].Distributors.push(newDistributors[12],newDistributors[20]);
 
-//   updateProducers[7].Items.push(newProducts[4]);
-//   updateProducers[7].Distributors.push(newDistributors[12],newDistributors[20]);
+  updateProducers[7].Items.push(newProducts[5]);
+  updateProducers[7].Distributors.push(newDistributors[8]);
 
-//   updateProducers[8].Items.push(newProducts[5]);
-//   updateProducers[8].Distributors.push(newDistributors[8]);
-
-//   updateProducers[9].Items.push(newProducts[4], newProducts[2]);
-//   updateProducers[9].Distributors.push(newDistributors[12],newDistributors[20],newDistributors[7],newDistributors[4],newDistributors[5]);
+  updateProducers[8].Items.push(newProducts[4], newProducts[2]);
+  updateProducers[8].Distributors.push(newDistributors[12],newDistributors[20],newDistributors[7],newDistributors[4],newDistributors[5]);
   
-//   updateProducers[10].Items.push(newProducts[5]);
-//   updateProducers[10].Distributors.push(newDistributors[8]);
+  updateProducers[9].Items.push(newProducts[5]);
+  updateProducers[9].Distributors.push(newDistributors[8]);
 
-//   updateProducers[11].Items.push(newProducts[5]);
-//   updateProducers[11].Distributors.push(newDistributors[15],newDistributors[14],newDistributors[18]);
+  updateProducers[10].Items.push(newProducts[5]);
+  updateProducers[10].Distributors.push(newDistributors[15],newDistributors[14],newDistributors[18]);
 
-//   updateProducers[12].Items.push(newProducts[5]);
-//   updateProducers[12].Distributors.push(newDistributors[16],newDistributors[19]); 
+  updateProducers[11].Items.push(newProducts[5]);
+  updateProducers[11].Distributors.push(newDistributors[16],newDistributors[19]); 
 
-//   updateProducers[13].Items.push(newProducts[2]);
-//   updateProducers[13].Distributors.push(newDistributors[13],newDistributors[4],newDistributors[5]); 
+  updateProducers[12].Items.push(newProducts[2]);
+  updateProducers[12].Distributors.push(newDistributors[13],newDistributors[4],newDistributors[5]); 
 
-//   updateProducers[14].Items.push(newProducts[0]);
-//   updateProducers[14].Distributors.push(newDistributors[0]); 
+  updateProducers[13].Items.push(newProducts[0]);
+  updateProducers[13].Distributors.push(newDistributors[0]); 
 
-//   updateProducers[15].Items.push(newProducts[0]);
-//   updateProducers[15].Distributors.push(newDistributors[0]); 
+  updateProducers[14].Items.push(newProducts[0]);
+  updateProducers[14].Distributors.push(newDistributors[0]); 
 
-//   updateProducers[16].Items.push(newProducts[2]);
-//   updateProducers[16].Distributors.push(newDistributors[13]); 
+  updateProducers[15].Items.push(newProducts[2]);
+  updateProducers[15].Distributors.push(newDistributors[13]); 
 
-//   updateProducers[17].Items.push(newProducts[3]);
-//   updateProducers[17].Distributors.push(newDistributors[3],newDistributors[13]); 
+  updateProducers[16].Items.push(newProducts[3]);
+  updateProducers[16].Distributors.push(newDistributors[3],newDistributors[13]); 
 
-//   updateProducers[18].Items.push(newProducts[1]);
-//   updateProducers[18].Distributors.push(newDistributors[1]);   
+  updateProducers[17].Items.push(newProducts[1]);
+  updateProducers[17].Distributors.push(newDistributors[1]);   
   
-//   updateProducers[19].Items.push(newProducts[3]);
-//   updateProducers[19].Distributors.push(newDistributors[3]); 
+  updateProducers[18].Items.push(newProducts[3]);
+  updateProducers[18].Distributors.push(newDistributors[3]); 
 
-//   updateProducers[20].Items.push(newProducts[0]);
-//   updateProducers[20].Distributors.push(newDistributors[9]);  
+  updateProducers[19].Items.push(newProducts[0]);
+  updateProducers[19].Distributors.push(newDistributors[9]);  
 
-//   Producer.insertMany(updateProducers, function(error, docs){
-//     if (!error) {
-//       console.log("Producer success!");
-//       res.redirect("/");
-//     }
-//     else {
-//       console.log(error);
-//     }
-//   })
-// });
+  Producer.insertMany(updateProducers, function(error, docs){
+    if (!error) {
+      console.log("Producer success!");
+      res.redirect("/");
+    }
+    else {
+      console.log(error);
+    }
+  })
+});
 
 //setting up the / route to render the home page
 app.get("/", function (req, res) {
@@ -199,6 +196,11 @@ app.get("/", function (req, res) {
 //setting up the about page route
 app.get("/aboutus", function (req, res) {
   res.render("about");
+});
+
+//setting up the upload logo route
+app.get("/verifylogo", function (req, res) {
+  res.render("verifylogo");
 });
 
 //setting up the producers page route
@@ -221,13 +223,27 @@ app.get("/distributors", function (req, res) {
 
 app.get("/producer/:producerID", function (req, res){
   const producerID = req.params.producerID;
-  res.render("/producer");
-})
+  let itemsList = [];
+  Producer.findById(producerID, function(err, producer){
+       for (i = 0; i < producer.Items.length; i ++){
+          Product.findOne({_id: producer.Items[i]}, function(err, item){
+            itemsList.push(item);
+            })
+      }
+      // console.log(itemsList);
+      res.render("producer", {
+        id: producerID,
+        producer:producer,
+        itemsList: itemsList
+      })
+  })
+});
+
 
 app.get("/distributor/:distributorID", function (req, res){
   const distributorID = req.params.distributorID;
   res.render("/distributor");
-})
+});
 
 //server listening on port 3000
 app.listen(3000, function () {

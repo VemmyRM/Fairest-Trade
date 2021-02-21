@@ -1,14 +1,17 @@
 <%- include("partials/header"); -%>
 <h1>Producers</h1>
-
-<% producers.forEach(function(prod){ %>
-    <div class="card" style="width: 100%;">
-        <img src="<%= prod.Picture %>" class="card-img-top" alt="...">
+<div class="row">
+  <% producers.forEach(function(prod){ %>
+    <div class="col-sm-6">
+      <div class="card">
+        <img src="<%= prod.Picture %>"  class="card-img-top" alt="...">
         <div id= "<%= prod._id %>"class="card-body">
-          <h5 class="card-title"><%= prod.Name %></h5>
+          <h5 class="card-title" ><%= prod.Name.substring(0,50) %></h5>
           <p class="card-text"><%= prod.Info.substring(0,100) + "..." %>></p>
-          <a href="/producers/<%= prod._id%>" class="btn btn-success">Read More</a>
+          <a href="/producer/<%= prod._id%>" class="btn btn-success">Read More</a>
         </div>
       </div>
+    </div>
 <% }); %>
+</div>
 <%- include("partials/footer"); -%>

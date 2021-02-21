@@ -1,7 +1,23 @@
 <!-- page header -->
 <%- include("partials/header"); -%>
 <!-- post title and content -->
-  <h1><%=Name%></h1>
-  <p><%=Info%></p>
+<div class="figure p-4" style=" display: block; margin-left:auto !important; margin-right: auto; padding-left: auto;">
+  <img src="<%= producer.Picture %>" class="figure-img img-fluid rounded" style=" display: block; margin-left:auto !important; margin-right: auto; padding-left: auto; min-height: 700px;" alt="...">
+  <figcaption class="figure-caption" style="display: block; margin-left:auto !important; margin-right: auto; padding-left: auto;"><%=producer.title %></figcaption>
+</div>
+  <h1><%=producer.Name%></h1>
+  <h4><%=producer.Location %></h4>
+  <hr>
+  <p><%=producer.Info%></p>
+  <h3>We produce: </h3>
+  <ul>
+    <% itemsList.forEach(function(err, item){ %>
+      <% console.log(itemsList) %>
+      <li id="<%= item._id%>"><%=item.Name %></li>
+      <% }); %>
+  </ul>
+    
+
+  <h2> Where to find </h2>
   <!-- page footer -->
 <%- include("partials/footer"); -%>

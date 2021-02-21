@@ -5,8 +5,10 @@ html {
 
 body {
   font-family: "Bitter", serif;
+  height: 100%;
 }
 h1 {
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
@@ -14,9 +16,16 @@ h1 {
   color: white !important;
 }
 
-/* .card-body p {
-  font-size: 1.5rem;
-} */
+/* .picture {
+  background: url(https://cdn.shopify.com/s/files/1/1127/7980/files/Fair-Trade-Coffee-Farmers-Peru_1024x1024.jpg?v=1541709020);
+  background-position: -100px -100px;
+  /* width: 200px;
+  height: 200px; */
+
+.card-body p {
+  /* font-size: 1.5rem; */
+  margin-bottom: 7px;
+}
 
 .card {
   margin-bottom: 20px;
@@ -25,10 +34,12 @@ h1 {
 .container-fluid {
   padding-top: 70px;
   padding-bottom: 70px;
+  font-family: "Bitter", serif;
 }
 
 .navbar-nav {
   flex-direction: row;
+  font-family: "Bitter", serif;
 }
 
 .navbar {
@@ -37,13 +48,14 @@ h1 {
   padding-bottom: 20px;
   border: 0;
   border-radius: 0;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   font-size: 12px;
   letter-spacing: 5px;
   background-color: #109643;
 }
 .navbar-nav li a:hover {
   color: black !important;
+  font-family: "Bitter", serif;
 }
 
 .navbar-nav li a {
@@ -71,6 +83,14 @@ h1 {
   border-color: #0334d1 !important;
 }
 
+.card-header {
+  margin-left: -90px;
+  margin-top: -25px;
+}
+.nav-item {
+  font-family: "Bitter", serif;
+}
+
 .card-btn {
   background-color: #0334d1;
 }
@@ -92,4 +112,62 @@ h5.card-title {
   margin-top: 25px;
   font-size: 12px;
   color: #fff;
+}
+
+.card-stuff {
+  background-image: url(https://www.teaandcoffee.net/wp-content/uploads/coffee-beans_64721-3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.container1 {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-family: "Bitter", serif;
+  font-size: 100px;
+}
+
+.file {
+  visibility: hidden;
+  position: absolute;
 }
